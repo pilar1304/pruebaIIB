@@ -1,0 +1,37 @@
+<!--
+  Generated template for the TiendaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tienda</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h2>Nuevo local con descuento</h2>
+    <ion-item>
+      <ion-label>Nombre del local</ion-label>
+      <ion-input [(ngModel)]="tienda.nomLocal" type="text" placeholder="Panaderia" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Nombre del propietario</ion-label>
+      <ion-input [(ngModel)]="tienda.nomprop" type="text" placeholder="Juan" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>#Local</ion-label>
+      <ion-input [(ngModel)]="tienda.numLocal" type="number" placeholder="123"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Actividad Comercial</ion-label>
+        <ion-input [(ngModel)]="tienda.activiCom" type="text" placeholder="Alimentos"></ion-input>
+    </ion-item>
+    <button ion-button block *ngIf="creado" (tap)="crearLocal(tienda)">Crear Local</button>
+    <button ion-button block icon-left *ngIf="!creado" (tap)="ponerDescuentos()"> <ion-icon name="add-circle"></ion-icon> Descuento</button>
+</ion-content>
+

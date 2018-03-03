@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Centro Comercial Ipiales Sur
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Lista de locales con descuento</h2>
+  <ion-card color="secondary" *ngFor="let tienda of tiendas">
+      <ion-card-header>
+          <ion-fab right >
+              <button ion-fab (tap)="borrar(tienda)">
+                  <ion-icon name="close"></ion-icon>
+              </button>
+            </ion-fab>
+          <ion-row>
+            <ion-col text-center>
+                {{tienda.nomLocal}}
+            </ion-col>
+            <ion-col center text-center>
+                  {{tienda.numLocal}}
+            </ion-col>
+          </ion-row>
+        
+      </ion-card-header>
+    
+      <ion-card-content>
+          <ion-row>
+            <ion-col col-12>
+                Propietario: {{tienda.nomprop}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+                Vende: {{tienda.activiCom}}
+            </ion-col>
+          </ion-row>
+      </ion-card-content>
+      <button ion-button clear full (tap)="verDescuentos(tienda)">Ver descuentos</button>
+    
+    </ion-card>
+
+    
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <button ion-button full color="danger" (click)="ingresaN()">
+          Ingresar Nuevo
+      </button>
+  </ion-toolbar>
+</ion-footer>

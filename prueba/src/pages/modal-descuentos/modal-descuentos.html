@@ -1,0 +1,32 @@
+<!--
+  Generated template for the ModalDescuentosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar color="primary">
+        <ion-title>Descuentos</ion-title>
+        <ion-buttons end>
+          <button ion-button icon-only (tap)="closeModal()">
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item>
+      <ion-label>Nombre del Producto</ion-label>
+      <ion-input [(ngModel)]="descuento.nomProd" type="text" placeholder="Pan" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Porcentaje de descuento</ion-label>
+      <ion-input [(ngModel)]="descuento.porDescu" type="text" placeholder="10%" ></ion-input>
+    </ion-item>
+    <button ion-button full (tap)="crearDesc(descuento)">Crear Descuento</button>
+
+</ion-content>
